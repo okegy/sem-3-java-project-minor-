@@ -1,0 +1,7 @@
+CyberLearn Progress Report
+User: shadow
+Quiz Score: 0 (Attempts: 0)
+Encryption Uses: 0
+Port Scans: 0
+Hashes: 0
+Password Manager Uses: 0

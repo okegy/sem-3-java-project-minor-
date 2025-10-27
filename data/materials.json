@@ -1,0 +1,337 @@
+[ {
+  "id" : "W1",
+  "title" : "Week 1: Cyber Hygiene & Passwords",
+  "level" : "L1 Basics",
+  "description" : "WEEK 1 OVERVIEW: Learn the fundamentals of cybersecurity by mastering password security and cyber hygiene best practices.\n\nKEY TOPICS:\n- Strong password creation (12+ characters, mix of upper/lower/numbers/symbols)\n- Password managers (LastPass, 1Password, Bitwarden)\n- Multi-Factor Authentication (MFA/2FA)\n- Regular software updates\n- Secure email practices\n\nCHEAT SHEET:\n1. Never reuse passwords across sites\n2. Enable MFA everywhere possible\n3. Use a password manager\n4. Update software within 48 hours of release\n5. Verify sender before clicking links\n\nPRACTICAL EXERCISE: Set up a password manager and enable 2FA on your email account.\n\nCOMPLETION BADGE: Cyber Hygiene Champion",
+  "links" : [ "https://www.youtube.com/watch?v=7U-RbOKanYs" ]
+}, {
+  "id" : "W2",
+  "title" : "Week 2: Phishing & Social Engineering",
+  "level" : "L1 Basics",
+  "description" : "WEEK 2 OVERVIEW: Understand how attackers manipulate people through phishing and social engineering tactics.\n\nKEY TOPICS:\n- Email phishing red flags (urgent language, suspicious links, spelling errors)\n- Spear phishing vs mass phishing\n- Vishing (voice phishing) and smishing (SMS phishing)\n- Pretexting and impersonation attacks\n- Business Email Compromise (BEC)\n\nCHEAT SHEET:\n1. Hover over links before clicking\n2. Check sender email carefully\n3. Look for HTTPS in URLs\n4. Never share passwords via email/phone\n5. Verify requests through separate channels\n6. Be suspicious of urgency and threats\n\nPRACTICAL EXERCISE: Identify phishing emails in your inbox and report them.\n\nCOMPLETION BADGE: Phishing Detector",
+  "links" : [ "https://www.youtube.com/watch?v=Um8GfXQ7Zc4" ]
+}, {
+  "id" : "W3",
+  "title" : "Week 3: Malware 101",
+  "level" : "L1 Basics",
+  "description" : "WEEK 3 OVERVIEW: Learn about different types of malware and how to protect against them.\n\nKEY TOPICS:\n- Virus: self-replicating malicious code\n- Worm: spreads without user action\n- Trojan: disguised as legitimate software\n- Ransomware: encrypts files for ransom\n- Spyware: steals information\n- Rootkit: hides malware presence\n\nCHEAT SHEET:\n1. Keep antivirus updated\n2. Don't download from untrusted sources\n3. Scan USB drives before use\n4. Regular backups (3-2-1 rule)\n5. Avoid pirated software\n6. Use application whitelisting\n\nPRACTICAL EXERCISE: Run a full system scan and review quarantined items.\n\nCOMPLETION BADGE: Malware Hunter",
+  "links" : [ "https://www.youtube.com/watch?v=Hk1nL3ZVn9E" ]
+}, {
+  "id" : "W4",
+  "title" : "Week 4: Safe Browsing & HTTPS",
+  "level" : "L1 Basics",
+  "description" : "WEEK 4 OVERVIEW: Master secure browsing practices and understand HTTPS encryption.\n\nKEY TOPICS:\n- HTTP vs HTTPS (SSL/TLS encryption)\n- Certificate authorities and trust chains\n- Padlock icon meaning\n- Secure vs insecure cookies\n- Browser security settings\n- Private/incognito mode limitations\n\nCHEAT SHEET:\n1. Only enter credentials on HTTPS sites\n2. Check for valid certificates\n3. Use browser extensions (HTTPS Everywhere, uBlock Origin)\n4. Clear cookies regularly\n5. Disable third-party cookies\n6. Enable Do Not Track\n\nPRACTICAL EXERCISE: Install HTTPS Everywhere and audit your saved passwords.\n\nCOMPLETION BADGE: Secure Surfer",
+  "links" : [ "https://www.youtube.com/watch?v=T4Df5_cojAs" ]
+}, {
+  "id" : "W5",
+  "title" : "Week 5: OSI & TCP/IP Quick Tour",
+  "level" : "L2 Network",
+  "description" : "WEEK 5 OVERVIEW: Understand network fundamentals through the OSI model and TCP/IP stack.\n\nKEY TOPICS:\n- OSI 7 layers (Physical, Data Link, Network, Transport, Session, Presentation, Application)\n- TCP/IP 4 layers\n- Encapsulation and de-encapsulation\n- TCP (reliable) vs UDP (fast)\n- Three-way handshake\n- Common protocols by layer\n\nCHEAT SHEET:\nLayer 1-Physical: Cables, hubs\nLayer 2-Data Link: Switches, MAC addresses\nLayer 3-Network: Routers, IP addresses\nLayer 4-Transport: TCP/UDP, ports\nLayer 5-7: Applications (HTTP, FTP, DNS)\n\nTCP: Connection-oriented, reliable\nUDP: Connectionless, fast\n\nPRACTICAL EXERCISE: Use 'netstat' command to view active connections.\n\nCOMPLETION BADGE: Network Navigator",
+  "links" : [ "https://www.youtube.com/watch?v=IPvYjXCsTg8" ]
+}, {
+  "id" : "W6",
+  "title" : "Week 6: Ports & Services",
+  "level" : "L2 Network",
+  "description" : "WEEK 6 OVERVIEW: Learn about network ports and common services that run on them.\n\nKEY TOPICS:\n- Port numbers (0-65535 range)\n- Well-known ports (0-1023)\n- Registered ports (1024-49151)\n- Common service ports\n- Port scanning basics\n- Service banner grabbing\n\nCHEAT SHEET - CRITICAL PORTS:\n20/21 - FTP (File Transfer)\n22 - SSH (Secure Shell)\n23 - Telnet (Insecure, avoid)\n25 - SMTP (Email)\n53 - DNS (Domain Name System)\n80 - HTTP (Web)\n443 - HTTPS (Secure Web)\n3306 - MySQL Database\n3389 - RDP (Remote Desktop)\n\nPRACTICAL EXERCISE: Use 'netstat -an' to see listening ports on your system.\n\nCOMPLETION BADGE: Port Master",
+  "links" : [ "https://www.youtube.com/watch?v=Z7A8QJdzV6s" ]
+}, {
+  "id" : "W7",
+  "title" : "Week 7: Firewalls & NAT",
+  "level" : "L2 Network",
+  "description" : "WEEK 7 OVERVIEW: Understand how firewalls protect networks and NAT conserves IP addresses.\n\nKEY TOPICS:\n- Packet filtering firewalls\n- Stateful vs stateless firewalls\n- Application layer firewalls (WAF)\n- NAT (Network Address Translation)\n- PAT (Port Address Translation)\n- Firewall rules and policies\n- DMZ (Demilitarized Zone)\n\nCHEAT SHEET:\nFirewall Types:\n1. Packet Filter: Checks IP/port\n2. Stateful: Tracks connections\n3. Proxy: Intermediary\n4. Next-Gen: Deep packet inspection\n\nNAT Benefits:\n- IP address conservation\n- Internal network hiding\n- Basic security layer\n\nPRACTICAL EXERCISE: Check Windows Firewall rules or configure router firewall.\n\nCOMPLETION BADGE: Firewall Guardian",
+  "links" : [ "https://www.youtube.com/watch?v=9C3a3bYpB28" ]
+}, {
+  "id" : "W8",
+  "title" : "Week 8: Wireshark Basics",
+  "level" : "L2 Network",
+  "description" : "WEEK 8 OVERVIEW: Learn packet analysis fundamentals using Wireshark network analyzer.\n\nKEY TOPICS:\n- Packet capture basics\n- Wireshark interface overview\n- Display filters vs capture filters\n- Following TCP streams\n- Protocol hierarchy\n- Analyzing HTTP traffic\n- Finding suspicious activity\n\nCHEAT SHEET - WIRESHARK FILTERS:\nip.addr == 192.168.1.1 (Specific IP)\ntcp.port == 80 (HTTP traffic)\nhttp (All HTTP)\nhttp.request.method == \"GET\" (GET requests)\ndns (DNS queries)\ntcp.flags.syn == 1 (SYN packets)\n\nAnalysis Tips:\n1. Start with Protocol Hierarchy\n2. Use Statistics > Conversations\n3. Follow TCP Stream for full sessions\n4. Export objects for file downloads\n\nPRACTICAL EXERCISE: Capture and analyze your own web browsing traffic.\n\nCOMPLETION BADGE: Packet Detective",
+  "links" : [ "https://www.youtube.com/watch?v=LXf9RrHV7Xw" ]
+}, {
+  "id" : "W9",
+  "title" : "Week 9: Intro to Nmap",
+  "level" : "L2 Network",
+  "description" : "Host discovery and port scanning ethics.",
+  "links" : [ "https://www.youtube.com/watch?v=5x9lR9G-5xI" ]
+}, {
+  "id" : "W10",
+  "title" : "Week 10: Crypto Fundamentals",
+  "level" : "L3 Crypto",
+  "description" : "Symmetric vs asymmetric, key terms.",
+  "links" : [ "https://www.youtube.com/watch?v=NmM9HA2MQGI" ]
+}, {
+  "id" : "W11",
+  "title" : "Week 11: AES in Practice",
+  "level" : "L3 Crypto",
+  "description" : "Modes, IVs, GCM authentication.",
+  "links" : [ "https://www.youtube.com/watch?v=O4xNJsjtN6E" ]
+}, {
+  "id" : "W12",
+  "title" : "Week 12: Hashing & Integrity",
+  "level" : "L4 Integrity",
+  "description" : "SHA-256 vs MD5, collisions.",
+  "links" : [ "https://www.youtube.com/watch?v=b4b8ktEV4Bg" ]
+}, {
+  "id" : "W13",
+  "title" : "Week 13: Public Key & Certificates",
+  "level" : "L3 Crypto",
+  "description" : "RSA/ECC, X.509, PKI.",
+  "links" : [ "https://www.youtube.com/watch?v=3QnD2c4Xovk" ]
+}, {
+  "id" : "W14",
+  "title" : "Week 14: TLS Deep Dive",
+  "level" : "L3 Crypto",
+  "description" : "Handshake, cert chain, ciphers.",
+  "links" : [ "https://www.youtube.com/watch?v=SJJmoDZ3il8" ]
+}, {
+  "id" : "W15",
+  "title" : "Week 15: Secure Email (SPF/DKIM/DMARC)",
+  "level" : "L2 Network",
+  "description" : "Sender policies & phishing defense.",
+  "links" : [ "https://www.youtube.com/watch?v=4b7Y6C7OQwY" ]
+}, {
+  "id" : "W16",
+  "title" : "Week 16: Wi‑Fi Security (WPA3)",
+  "level" : "L2 Network",
+  "description" : "Authentication, PSK, EAP.",
+  "links" : [ "https://www.youtube.com/watch?v=rD9YwW1XFsQ" ]
+}, {
+  "id" : "W17",
+  "title" : "Week 17: Linux Security Primer",
+  "level" : "L5 Forensics",
+  "description" : "Permissions, sudo, logs.",
+  "links" : [ "https://www.youtube.com/watch?v=IVquJh3DXUA" ]
+}, {
+  "id" : "W18",
+  "title" : "Week 18: Windows Security Basics",
+  "level" : "L5 Forensics",
+  "description" : "Event Viewer, Defender, Group Policy.",
+  "links" : [ "https://www.youtube.com/watch?v=E9GdZl8-9ks" ]
+}, {
+  "id" : "W19",
+  "title" : "Week 19: Vulnerability Scanning",
+  "level" : "L5 Forensics",
+  "description" : "Concepts with OpenVAS/Nessus (theory).",
+  "links" : [ "https://www.youtube.com/watch?v=soZx2drXrDo" ]
+}, {
+  "id" : "W20",
+  "title" : "Week 20: OWASP Top 10 Overview",
+  "level" : "L5 Forensics",
+  "description" : "Web app security risks.",
+  "links" : [ "https://www.youtube.com/watch?v=LLsZ5v74I9Q" ]
+}, {
+  "id" : "W21",
+  "title" : "Week 21: SQL Injection Basics",
+  "level" : "L5 Forensics",
+  "description" : "Injection patterns & mitigations.",
+  "links" : [ "https://www.youtube.com/watch?v=ciNHn38EyRc" ]
+}, {
+  "id" : "W22",
+  "title" : "Week 22: XSS & CSRF",
+  "level" : "L5 Forensics",
+  "description" : "Stored/reflected XSS; CSRF tokens.",
+  "links" : [ "https://www.youtube.com/watch?v=EoaDgUgS6QA" ]
+}, {
+  "id" : "W23",
+  "title" : "Week 23: SSRF, RCE, Deserialization",
+  "level" : "L5 Forensics",
+  "description" : "Advanced vulns at a glance.",
+  "links" : [ "https://www.youtube.com/watch?v=H8W9oM1Aq8E" ]
+}, {
+  "id" : "W24",
+  "title" : "Week 24: Intro to Reverse Engineering",
+  "level" : "L5 Forensics",
+  "description" : "Static vs dynamic, strings, basic tools.",
+  "links" : [ "https://www.youtube.com/watch?v=5wNQ8PpUqhQ" ]
+}, {
+  "id" : "W25",
+  "title" : "Week 25: Intro to Forensics",
+  "level" : "L5 Forensics",
+  "description" : "Chain of custody, imaging, triage.",
+  "links" : [ "https://www.youtube.com/watch?v=Dqg9t1M7Y2w" ]
+}, {
+  "id" : "W26",
+  "title" : "Week 26: SIEM Basics",
+  "level" : "L5 Forensics",
+  "description" : "Log aggregation & alerts.",
+  "links" : [ "https://www.youtube.com/watch?v=KpOeQ7YAxNI" ]
+}, {
+  "id" : "W27",
+  "title" : "Week 27: Incident Response 101",
+  "level" : "L5 Forensics",
+  "description" : "Containment, eradication, recovery.",
+  "links" : [ "https://www.youtube.com/watch?v=8fXjG1x3aZU" ]
+}, {
+  "id" : "W28",
+  "title" : "Week 28: Threat Intel Basics",
+  "level" : "L5 Forensics",
+  "description" : "IOC, TTP, feeds.",
+  "links" : [ "https://www.youtube.com/watch?v=Kp0U3lX1K0o" ]
+}, {
+  "id" : "W29",
+  "title" : "Week 29: Cloud Security 1",
+  "level" : "L5 Forensics",
+  "description" : "Shared responsibility model.",
+  "links" : [ "https://www.youtube.com/watch?v=Qv6x8GZFODc" ]
+}, {
+  "id" : "W30",
+  "title" : "Week 30: Cloud Security 2 (IAM)",
+  "level" : "L5 Forensics",
+  "description" : "Least privilege, roles, keys.",
+  "links" : [ "https://www.youtube.com/watch?v=y6lO9e3xLLE" ]
+}, {
+  "id" : "W31",
+  "title" : "Week 31: Containers & Docker Security",
+  "level" : "L5 Forensics",
+  "description" : "Images, vulnerabilities, namespaces.",
+  "links" : [ "https://www.youtube.com/watch?v=8fi7uSYlOdc" ]
+}, {
+  "id" : "W32",
+  "title" : "Week 32: Kubernetes Security",
+  "level" : "L5 Forensics",
+  "description" : "RBAC, network policies.",
+  "links" : [ "https://www.youtube.com/watch?v=s_o8dwzRlu4" ]
+}, {
+  "id" : "W33",
+  "title" : "Week 33: DevSecOps Basics",
+  "level" : "L5 Forensics",
+  "description" : "Shift-left, SAST/DAST, secrets.",
+  "links" : [ "https://www.youtube.com/watch?v=_P8Qh5FZtA8" ]
+}, {
+  "id" : "W34",
+  "title" : "Week 34: Secrets Management",
+  "level" : "L5 Forensics",
+  "description" : "Vaults, KMS, key rotation.",
+  "links" : [ "https://www.youtube.com/watch?v=vG5Q_L8oA1g" ]
+}, {
+  "id" : "W35",
+  "title" : "Week 35: Supply Chain Security",
+  "level" : "L5 Forensics",
+  "description" : "SBOM, signing, provenance.",
+  "links" : [ "https://www.youtube.com/watch?v=G9e9zraFM3k" ]
+}, {
+  "id" : "W36",
+  "title" : "Week 36: Privacy & GDPR/CCPA",
+  "level" : "L5 Forensics",
+  "description" : "Data protection law basics.",
+  "links" : [ "https://www.youtube.com/watch?v=qUx3FZ3VAbU" ]
+}, {
+  "id" : "W37",
+  "title" : "Week 37: Mobile Security",
+  "level" : "L5 Forensics",
+  "description" : "Permissions, malware, stores.",
+  "links" : [ "https://www.youtube.com/watch?v=2Yg1VnP1b6c" ]
+}, {
+  "id" : "W38",
+  "title" : "Week 38: API Security",
+  "level" : "L5 Forensics",
+  "description" : "OWASP API Top 10.",
+  "links" : [ "https://www.youtube.com/watch?v=7aCwzF1J6f0" ]
+}, {
+  "id" : "W39",
+  "title" : "Week 39: Password Managers & 2FA",
+  "level" : "L1 Basics",
+  "description" : "Managers, TOTP, U2F keys.",
+  "links" : [ "https://www.youtube.com/watch?v=U0J0OaSxZQk" ]
+}, {
+  "id" : "W40",
+  "title" : "Week 40: Backups & Ransomware Defense",
+  "level" : "L1 Basics",
+  "description" : "3-2-1 backups & drills.",
+  "links" : [ "https://www.youtube.com/watch?v=0lJQkqRR3gU" ]
+}, {
+  "id" : "W41",
+  "title" : "Week 41: Network Hardening",
+  "level" : "L2 Network",
+  "description" : "Disable services, segment.",
+  "links" : [ "https://www.youtube.com/watch?v=Vn0GNYJkZKg" ]
+}, {
+  "id" : "W42",
+  "title" : "Week 42: Host Hardening",
+  "level" : "L5 Forensics",
+  "description" : "Baseline, patching, CIS.",
+  "links" : [ "https://www.youtube.com/watch?v=0V6-4Q0u7nI" ]
+}, {
+  "id" : "W43",
+  "title" : "Week 43: Logging & Monitoring",
+  "level" : "L5 Forensics",
+  "description" : "Central logs & retention.",
+  "links" : [ "https://www.youtube.com/watch?v=YxS_5-6J3Ss" ]
+}, {
+  "id" : "W44",
+  "title" : "Week 44: Purple Team Basics",
+  "level" : "L5 Forensics",
+  "description" : "Red/Blue collaboration.",
+  "links" : [ "https://www.youtube.com/watch?v=9v9iWw7P3gI" ]
+}, {
+  "id" : "W45",
+  "title" : "Week 45: Threat Modeling",
+  "level" : "L5 Forensics",
+  "description" : "STRIDE, attack trees.",
+  "links" : [ "https://www.youtube.com/watch?v=6s-0w1C8k4Q" ]
+}, {
+  "id" : "W46",
+  "title" : "Week 46: Crypto Wallet Safety",
+  "level" : "L3 Crypto",
+  "description" : "Keys, seed phrases, hardware wallets.",
+  "links" : [ "https://www.youtube.com/watch?v=HquZ4HhQGgM" ]
+}, {
+  "id" : "W47",
+  "title" : "Week 47: OSINT Basics",
+  "level" : "L5 Forensics",
+  "description" : "Reconnaissance techniques.",
+  "links" : [ "https://www.youtube.com/watch?v=evyZf6QZBdg" ]
+}, {
+  "id" : "W48",
+  "title" : "Week 48: Ethical Hacking Overview",
+  "level" : "L5 Forensics",
+  "description" : "Rules, scope, responsible disclosure.",
+  "links" : [ "https://www.youtube.com/watch?v=3Kq1MIfTWCE" ]
+}, {
+  "id" : "W49",
+  "title" : "Week 49: Bug Bounty Basics",
+  "level" : "L5 Forensics",
+  "description" : "Finding and reporting vulnerabilities.",
+  "links" : [ "https://www.youtube.com/watch?v=FQwZKqZtOqk" ]
+}, {
+  "id" : "W50",
+  "title" : "Week 50: Blue Team Playbook",
+  "level" : "L5 Forensics",
+  "description" : "Defensive checklist & drills.",
+  "links" : [ "https://www.youtube.com/watch?v=u5mzzp2n6H4" ]
+}, {
+  "id" : "W51",
+  "title" : "Week 51: Final Review & Boss Prep",
+  "level" : "L5 Forensics",
+  "description" : "Consolidate knowledge for the final boss.",
+  "links" : [ "https://www.youtube.com/watch?v=wU6Y5iJF8cE" ]
+}, {
+  "id" : "W52",
+  "title" : "Week 52: Cyber Hygiene & Passwords",
+  "level" : "L1 Basics",
+  "description" : "Foundations: hygiene, password policies, MFA.",
+  "links" : [ "https://www.youtube.com/watch?v=7U-RbOKanYs" ]
+}, {
+  "id" : "b055da13-a8ba-49b0-85a9-cfb758a7661b",
+  "title" : "",
+  "level" : "",
+  "description" : "",
+  "links" : [ "" ]
+}, {
+  "id" : "b093652a-fbad-4d37-87fc-21ad6d0e12be",
+  "title" : "",
+  "level" : "",
+  "description" : "",
+  "links" : [ "" ]
+}, {
+  "id" : "5a23b85c-0f30-4eb0-83ea-49be323c256c",
+  "title" : "",
+  "level" : "",
+  "description" : "",
+  "links" : [ "" ]
+}, {
+  "id" : "f8ff1f5d-a080-48bd-93c9-69a28b22d8ad",
+  "title" : "",
+  "level" : "",
+  "description" : "",
+  "links" : [ "" ]
+} ]

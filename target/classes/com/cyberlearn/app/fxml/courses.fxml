@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.web.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cyberlearn.app.controller.CoursesController" spacing="12" styleClass="content">
+    <Label text="Learning Courses" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+    
+    <HBox spacing="12">
+        <VBox spacing="8" prefWidth="260">
+            <Label text="Course Modules:"/>
+            <ListView fx:id="list" VBox.vgrow="ALWAYS"/>
+        </VBox>
+        <VBox spacing="8" HBox.hgrow="ALWAYS">
+            <Label text="Course Notes:"/>
+            <TextArea fx:id="notes" wrapText="true" VBox.vgrow="ALWAYS" editable="false"/>
+        </VBox>
+    </HBox>
+    
+    <Label text="Lesson Video:"/>
+    <WebView fx:id="web" prefHeight="360"/>
+    
+    <HBox spacing="12">
+        <Button text="Take Week Quiz (10 Questions)" onAction="#onTakeQuiz" style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-weight: bold; -fx-pref-width: 240;"/>
+        <Button text="Mark Lesson Complete and Get Certificate" onAction="#onComplete" style="-fx-background-color: #00ff88; -fx-text-fill: black; -fx-font-weight: bold; -fx-pref-width: 320;"/>
+    </HBox>
+</VBox>

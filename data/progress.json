@@ -1,0 +1,28 @@
+[ {
+  "username" : "shadow",
+  "quizScore" : 35,
+  "quizAttempts" : 8,
+  "encUses" : 7,
+  "scanUses" : 5,
+  "hashUses" : 3,
+  "passMgrUses" : 4,
+  "completedLessons" : [ ]
+}, {
+  "username" : "akash",
+  "quizScore" : 19,
+  "quizAttempts" : 11,
+  "encUses" : 11,
+  "scanUses" : 1,
+  "hashUses" : 3,
+  "passMgrUses" : 3,
+  "completedLessons" : [ "W2", "W3", "W1" ]
+}, {
+  "username" : "admin",
+  "quizScore" : 0,
+  "quizAttempts" : 0,
+  "encUses" : 0,
+  "scanUses" : 0,
+  "hashUses" : 0,
+  "passMgrUses" : 0,
+  "completedLessons" : [ ]
+} ]

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cyberlearn.app.controller.AdminController">
+    <top>
+        <HBox spacing="16" styleClass="topbar">
+            <Label text="Admin Dashboard — CyberLearn" styleClass="brand"/>
+            <Pane HBox.hgrow="ALWAYS"/>
+            <Button text="Manage Learning Materials" onAction="#onManageMaterials" style="-fx-background-color: #00ff88; -fx-text-fill: black;"/>
+            <Button text="Toggle Theme" onAction="#onToggleTheme"/>
+            <Button text="Logout" onAction="#onLogout"/>
+        </HBox>
+    </top>
+    <center>
+        <SplitPane dividerPositions="0.35">
+            <items>
+                <!-- USER MANAGEMENT SECTION -->
+                <VBox spacing="12" styleClass="content" style="-fx-padding: 16;">
+                    <Label text="👥 User Management" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+                    <Separator/>
+                    
+                    <TableView fx:id="tblUsers" prefHeight="300">
+                        <columns>
+                            <TableColumn fx:id="colUser" text="Username" prefWidth="180"/>
+                            <TableColumn fx:id="colRole" text="Role" prefWidth="120"/>
+                        </columns>
+                    </TableView>
+                    
+                    <Label text="User Actions:" style="-fx-font-size: 12px; -fx-font-weight: bold;"/>
+                    <VBox spacing="8">
+                        <Button text="🔑 Reset User Password" onAction="#onResetPassword" prefWidth="200" style="-fx-alignment: center-left;"/>
+                        <Button text="✓/✗ Activate/Deactivate User" onAction="#onToggleActive" prefWidth="200" style="-fx-alignment: center-left;"/>
+                    </VBox>
+                </VBox>
+                
+                <!-- PROGRESS & REPORTS SECTION -->
+                <VBox spacing="12" styleClass="content" style="-fx-padding: 16;">
+                    <Label text="📊 Student Progress Tracking" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+                    <Separator/>
+                    
+                    <TableView fx:id="tblProgress" prefHeight="300">
+                        <columns>
+                            <TableColumn fx:id="colPUser" text="Username" prefWidth="120"/>
+                            <TableColumn fx:id="colQuiz" text="Quiz Score" prefWidth="85"/>
+                            <TableColumn fx:id="colAttempts" text="Attempts" prefWidth="80"/>
+                            <TableColumn fx:id="colEnc" text="Encrypt" prefWidth="70"/>
+                            <TableColumn fx:id="colScan" text="Scans" prefWidth="65"/>
+                            <TableColumn fx:id="colHash" text="Hashes" prefWidth="70"/>
+                            <TableColumn fx:id="colPass" text="Vault" prefWidth="65"/>
+                        </columns>
+                    </TableView>
+                    
+                    <Label text="Export All Students:" style="-fx-font-size: 12px; -fx-font-weight: bold;"/>
+                    <HBox spacing="12">
+                        <Button text="📄 Export All Progress (CSV)" onAction="#onExportCSV" prefWidth="220"/>
+                        <Button text="📁 Generate All Reports (TXT)" onAction="#onGenerateReports" prefWidth="220"/>
+                    </HBox>
+                    
+                    <Label text="Export Selected Student:" style="-fx-font-size: 12px; -fx-font-weight: bold; -fx-padding: 8 0 0 0;"/>
+                    <HBox spacing="12">
+                        <Button text="📊 Export Student CSV" onAction="#onExportSelectedCSV" prefWidth="220"/>
+                        <Button text="📑 Export Student PDF Report" onAction="#onExportSelectedPDF" prefWidth="220"/>
+                    </HBox>
+                    
+                    <Separator/>
+                    <Label fx:id="lblStatus" text="Ready" style="-fx-font-size: 12px; -fx-text-fill: #00ff88;"/>
+                </VBox>
+            </items>
+        </SplitPane>
+    </center>
+</BorderPane>

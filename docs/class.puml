@@ -1,0 +1,9 @@
+@startuml
+class User { username; passwordHash; role }
+class Progress { quizScore; quizAttempts; encUses; scanUses; hashUses; passMgrUses }
+class AuthService
+class ProgressService
+User "1" -- "1" Progress : tracks
+AuthService ..> User
+ProgressService ..> Progress
+@enduml

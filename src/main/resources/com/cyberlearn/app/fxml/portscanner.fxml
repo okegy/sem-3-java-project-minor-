@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cyberlearn.app.controller.PortScannerController" spacing="8" styleClass="content">
+    <Label text="📡 Open Port Scanner"/>
+    <HBox spacing="8">
+        <Label text="Host:"/>
+        <TextField fx:id="txtHost" promptText="127.0.0.1"/>
+        <Label text="Range:"/>
+        <TextField fx:id="txtStart" prefWidth="60" text="1"/>
+        <Label text="to"/>
+        <TextField fx:id="txtEnd" prefWidth="60" text="1024"/>
+        <Button text="Scan" onAction="#onScan"/>
+        <Label fx:id="lblStatus" text="Ready"/>
+    </HBox>
+    <TableView fx:id="table" prefHeight="400">
+        <columns>
+            <TableColumn fx:id="colPort" text="Port" prefWidth="120"/>
+            <TableColumn fx:id="colStatus" text="Status" prefWidth="180"/>
+        </columns>
+    </TableView>
+</VBox>

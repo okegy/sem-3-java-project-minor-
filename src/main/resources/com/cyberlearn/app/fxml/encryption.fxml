@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cyberlearn.app.controller.EncryptionController" spacing="8" styleClass="content">
+    <Label text="🔐 Encryption / Decryption (AES-GCM)"/>
+    <HBox spacing="8">
+        <Label text="Key:"/>
+        <PasswordField fx:id="txtKey" promptText="Master key"/>
+        <Button text="Encrypt" onAction="#onEncrypt"/>
+        <Button text="Decrypt" onAction="#onDecrypt"/>
+        <Label fx:id="lblStatus" text="Ready"/>
+    </HBox>
+    <Label text="Plaintext"/>
+    <TextArea fx:id="txtPlain" prefRowCount="5"/>
+    <Label text="Ciphertext (Base64)"/>
+    <TextArea fx:id="txtCipher" prefRowCount="5"/>
+</VBox>

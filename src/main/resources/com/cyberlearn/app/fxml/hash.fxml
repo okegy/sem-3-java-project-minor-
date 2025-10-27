@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cyberlearn.app.controller.HashController" spacing="8" styleClass="content">
+    <Label text="📁 File Integrity Checker"/>
+    <HBox spacing="8">
+        <Button text="Pick File" onAction="#onPickFile"/>
+        <Label text="Algorithm:"/>
+        <TextField fx:id="txtAlgorithm" promptText="SHA-256"/>
+        <Button text="Hash" onAction="#onHash"/>
+        <Label fx:id="lblStatus" text="Ready"/>
+    </HBox>
+    <Label text="Output"/>
+    <TextArea fx:id="txtOutput" prefRowCount="6"/>
+</VBox>

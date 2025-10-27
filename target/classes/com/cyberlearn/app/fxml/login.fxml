@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cyberlearn.app.controller.LoginController">
+    <center>
+        <VBox spacing="12" maxWidth="420" styleClass="content">
+            <Label text="CYBERLEARN — Login" styleClass="brand"/>
+            <Label text="Username"/>
+            <TextField fx:id="txtUser" promptText="Enter username"/>
+            <Label text="Password"/>
+            <PasswordField fx:id="txtPass" promptText="Enter password"/>
+            <HBox spacing="8">
+                <Button text="Login" onAction="#onLogin"/>
+                <Button text="Create Account" onAction="#onRegister"/>
+            </HBox>
+            <Label fx:id="lblStatus" text="Admin default: admin/admin123"/>
+        </VBox>
+    </center>
+</BorderPane>

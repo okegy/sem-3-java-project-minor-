@@ -1,0 +1,75 @@
+/* Cyberpunk-ish theme */
+.root {
+    -fx-base: #0b0f14;
+    -fx-background: #0b0f14;
+    -fx-accent: #00fff5;
+    -fx-text-fill: #e6f7ff;
+}
+
+.topbar {
+    -fx-padding: 12;
+    -fx-background-color: linear-gradient(to right, #121826, #0b0f14);
+    -fx-effect: dropshadow(gaussian, rgba(0,255,245,0.25), 20, 0.2, 0, 6);
+    -fx-alignment: center-left;
+}
+
+.brand {
+    -fx-text-fill: #00fff5;
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, rgba(0,255,245,0.45), 18, 0.2, 0, 0);
+}
+
+.rank {
+    -fx-text-fill: #8F00FF;
+    -fx-font-weight: bold;
+}
+
+.content {
+    -fx-padding: 16;
+    -fx-background-color: rgba(18, 24, 38, 0.7);
+    -fx-background-radius: 16;
+    -fx-effect: dropshadow(gaussian, rgba(143,0,255,0.25), 18, 0.2, 0, 6);
+}
+
+.button {
+    -fx-background-color: #101820;
+    -fx-text-fill: #e6f7ff;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-color: #00A3FF;
+    -fx-border-width: 1;
+}
+
+.button:hover {
+    -fx-background-color: #132032;
+    -fx-effect: dropshadow(gaussian, rgba(0,163,255,0.4), 12, 0.2, 0, 0);
+}
+
+.text-field, .password-field, .text-area {
+    -fx-background-color: #0e1622;
+    -fx-text-fill: #cde7ff;
+    -fx-prompt-text-fill: #7aa0b8;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-color: rgba(0,255,245,0.25);
+}
+
+.label {
+    -fx-text-fill: #cde7ff;
+}
+
+
+/* Higher contrast adjustments */
+.content {
+    -fx-background-color: linear-gradient(to bottom, rgba(16,24,32,0.95), rgba(10,14,20,0.95));
+    -fx-border-color: #00fff5;
+    -fx-border-width: 1;
+}
+
+.label { -fx-font-size: 13px; }
+.button { -fx-font-size: 13px; }
+.text-field, .password-field, .text-area {
+    -fx-border-color: #8F00FF;
+    -fx-border-width: 1;
+}

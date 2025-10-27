@@ -1,0 +1,11 @@
+@startuml
+actor Student
+actor Admin
+rectangle CyberLearn {
+  Student --> (Register/Login)
+  Student --> (Use Tools)
+  Student --> (Take Quiz)
+  Admin --> (View Users)
+  Admin --> (Export CSV/PDF)
+}
+@enduml

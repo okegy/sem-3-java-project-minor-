@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cyberlearn.app.controller.GameDashboardController" spacing="8" styleClass="content">
+    <Label text="🏁 CyberLearn Adventure Map"/>
+    <AnchorPane fx:id="track" style="-fx-background-color: rgba(255,255,255,0.05); -fx-background-radius: 12;" prefHeight="120">
+        <children>
+            <ImageView fx:id="hero" fitWidth="64" fitHeight="64" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="0.0" AnchorPane.bottomAnchor="8.0">
+                <image>
+                    <Image url="@/com/cyberlearn/app/hero.png"/>
+                </image>
+            </ImageView>
+        </children>
+    </AnchorPane>
+    <Label fx:id="lblPct" text="Completion: 0%"/>
+    <Label text="Tip: Use tools and quizzes to increase completion. Badges unlock as you practice."/>
+</VBox>

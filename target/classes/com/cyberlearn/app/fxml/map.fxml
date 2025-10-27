@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cyberlearn.app.controller.StageMapController" spacing="10" styleClass="content">
+    <Label text="🌍 World Map"/>
+    <HBox fx:id="worlds" spacing="20" alignment="CENTER">
+        <ImageView fitWidth="96" fitHeight="96"><image><Image url="@/com/cyberlearn/app/village.png"/></image></ImageView>
+        <ImageView fitWidth="96" fitHeight="96"><image><Image url="@/com/cyberlearn/app/netropolis.png"/></image></ImageView>
+        <ImageView fitWidth="96" fitHeight="96"><image><Image url="@/com/cyberlearn/app/crypto.png"/></image></ImageView>
+        <ImageView fitWidth="96" fitHeight="96"><image><Image url="@/com/cyberlearn/app/hash.png"/></image></ImageView>
+        <ImageView fitWidth="96" fitHeight="96"><image><Image url="@/com/cyberlearn/app/fortress.png"/></image></ImageView>
+    </HBox>
+    <Label fx:id="lblStatus" text="Worlds unlocked: 1/5"/>
+    <Label text="Advance by using tools and passing quizzes. Boss unlocks in the Fortress."/>
+</VBox>
