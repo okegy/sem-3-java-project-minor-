@@ -2,20 +2,51 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cyberlearn.app.controller.LoginController">
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="com.cyberlearn.app.controller.LoginController"
+            stylesheets="@/com/cyberlearn/app/css/cyberpunk.css">
+    
     <center>
-        <VBox spacing="12" maxWidth="420" styleClass="content">
-            <Label text="CYBERLEARN — Login" styleClass="brand"/>
-            <Label text="Username"/>
-            <TextField fx:id="txtUser" promptText="Enter username"/>
-            <Label text="Password"/>
-            <PasswordField fx:id="txtPass" promptText="Enter password"/>
-            <HBox spacing="8">
-                <Button text="Login" onAction="#onLogin"/>
-                <Button text="Create Account" onAction="#onRegister"/>
-            </HBox>
-            <Label fx:id="lblStatus" text="Admin default: admin/admin123"/>
+        <VBox alignment="CENTER" spacing="20" maxWidth="400" style="-fx-padding: 40; -fx-background-color: #f8f9fa;">
+            <!-- Header -->
+            <VBox alignment="CENTER" spacing="10">
+                <Text style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-fill: #2c3e50;">
+                    CYBERLEARN
+                </Text>
+                <Text style="-fx-font-size: 14px; -fx-fill: #7f8c8d;">
+                    Cybersecurity Learning Platform
+                </Text>
+            </VBox>
+            
+            <!-- Login Form -->
+            <VBox spacing="15" style="-fx-padding: 30; -fx-background-color: white; -fx-background-radius: 8; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);" maxWidth="360">
+                <Text style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-fill: #2c3e50;">
+                    Sign In
+                </Text>
+                
+                <Label text="Username" style="-fx-text-fill: #2c3e50; -fx-font-weight: bold;"/>
+                <TextField fx:id="txtUser" promptText="Enter your username" style="-fx-pref-height: 40px; -fx-font-size: 14px;"/>
+                
+                <Label text="Password" style="-fx-text-fill: #2c3e50; -fx-font-weight: bold; -fx-padding: 5 0 0 0;"/>
+                <PasswordField fx:id="txtPass" promptText="Enter your password" style="-fx-pref-height: 40px; -fx-font-size: 14px;"/>
+                
+                <Label fx:id="lblStatus" style="-fx-text-fill: #e74c3c; -fx-min-height: 20px; -fx-wrap-text: true;" text="Default: admin/admin123"/>
+                
+                <Button fx:id="btnLogin" text="Sign In" onAction="#onLogin" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold; -fx-pref-height: 40px; -fx-cursor: hand;" />
+                
+                <HBox alignment="CENTER" spacing="5" style="-fx-padding: 10 0 0 0;">
+                    <Text style="-fx-fill: #7f8c8d;">Don't have an account?</Text>
+                    <Button fx:id="btnRegister" text="Create Account" onAction="#onRegister" style="-fx-background-color: transparent; -fx-text-fill: #3498db; -fx-padding: 0 0 0 5; -fx-cursor: hand; -fx-underline: true;" />
+                </HBox>
+            </VBox>
+            
+            <!-- Footer -->
+            <Text style="-fx-font-size: 12px; -fx-fill: #95a5a6;">
+                &#169; 2023 CyberLearn. All rights reserved.
+            </Text>
         </VBox>
     </center>
 </BorderPane>
+

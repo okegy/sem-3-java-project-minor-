@@ -28,10 +28,10 @@ public class PasswordManagerController {
     private File vaultFile;
 
     @FXML
-    public void initialize_old__remove(){
+    public void initialize(){
         colSite.setCellValueFactory(c -> new javafx.beans.property.SimpleStringProperty(c.getValue().getSite()));
         colUser.setCellValueFactory(c -> new javafx.beans.property.SimpleStringProperty(c.getValue().getUsername()));
-        colPass.setCellValueFactory(c -> new javafx.beans.property.SimpleStringProperty("●●●●●"));
+        colPass.setCellValueFactory(c -> new javafx.beans.property.SimpleStringProperty(c.getValue().getPassword()));
         colNote.setCellValueFactory(c -> new javafx.beans.property.SimpleStringProperty(c.getValue().getNote()));
         table.setItems(items);
     }
@@ -49,6 +49,7 @@ public class PasswordManagerController {
             FileChooser fc = new FileChooser();
             fc.setInitialFileName("vault.clearn");
             vaultFile = fc.showSaveDialog(null);
+            if (vaultFile == null) { lblStatus.setText("Save cancelled"); return; }
         }
         try {
             com.cyberlearn.app.util.Vault.saveVault(vaultFile.toPath(), txtMaster.getText(), items);
@@ -87,11 +88,23 @@ public class PasswordManagerController {
 
     @FXML
     public void onGenerate(){
-        String chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()-_=+[]{};:,.?/";
-        StringBuilder sb = new StringBuilder();
+        String upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        String lower = "abcdefghijklmnopqrstuvwxyz";
+        String digits = "0123456789";
+        String symbols = "!@#$%^&*()-_=+[]{};:,.?/";
+        String all = upper + lower + digits + symbols;
         java.util.Random r = new java.util.Random();
-        for (int i=0;i<16;i++){ sb.append(chars.charAt(r.nextInt(chars.length()))); }
-        txtPass.setText(sb.toString());
-        if (strengthBar != null) strengthBar.setProgress(strength(sb.toString()));
+        char[] out = new char[8];
+        out[0] = upper.charAt(r.nextInt(upper.length()));
+        out[1] = lower.charAt(r.nextInt(lower.length()));
+        out[2] = digits.charAt(r.nextInt(digits.length()));
+        out[3] = symbols.charAt(r.nextInt(symbols.length()));
+        for (int i=4;i<8;i++) out[i] = all.charAt(r.nextInt(all.length()));
+        // shuffle
+        for (int i=7;i>0;i--){ int j = r.nextInt(i+1); char t=out[i]; out[i]=out[j]; out[j]=t; }
+        String pwd = new String(out);
+        txtPass.setText(pwd);
+        if (strengthBar != null) strengthBar.setProgress(strength(pwd));
+        items.add(new PasswordEntry(txtSite.getText(), txtUser.getText(), pwd, txtNote.getText()));
     }
 }

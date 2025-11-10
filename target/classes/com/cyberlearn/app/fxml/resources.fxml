@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-
-<HBox xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cyberlearn.app.controller.ResourcesController" spacing="12" styleClass="content">
-    <ListView fx:id="list" prefWidth="380"/>
-    <TextArea fx:id="details" wrapText="true" prefRowCount="18"/>
-</HBox>

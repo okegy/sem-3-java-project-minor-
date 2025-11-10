@@ -14,12 +14,26 @@ import java.util.stream.Collectors;
 
 public class ProgressService {
     private static final ObjectMapper MAPPER = new ObjectMapper();
-    private static final Path FILE = Path.of("data/progress.json");
+    private static final Path HOME_DIR = Path.of(System.getProperty("user.home"), ".cyberlearn");
+    private static final Path FILE = HOME_DIR.resolve("progress.json");
+    private static final Path LEGACY_FILE = Path.of("data/progress.json");
 
     private static List<Progress> readAll() throws IOException {
+        // Ensure directory exists
+        if (!Files.exists(HOME_DIR)) {
+            Files.createDirectories(HOME_DIR);
+        }
+
+        // Migrate legacy file if needed
         if (!Files.exists(FILE)) {
-            Files.createDirectories(FILE.getParent());
-            MAPPER.writerWithDefaultPrettyPrinter().writeValue(FILE.toFile(), new ArrayList<Progress>());
+            if (Files.exists(LEGACY_FILE)) {
+                Files.createDirectories(FILE.getParent());
+                // Read legacy data then write to new location
+                List<Progress> legacy = MAPPER.readValue(LEGACY_FILE.toFile(), new TypeReference<List<Progress>>(){});
+                MAPPER.writerWithDefaultPrettyPrinter().writeValue(FILE.toFile(), legacy);
+            } else {
+                MAPPER.writerWithDefaultPrettyPrinter().writeValue(FILE.toFile(), new ArrayList<Progress>());
+            }
         }
         return MAPPER.readValue(FILE.toFile(), new TypeReference<List<Progress>>(){});
     }

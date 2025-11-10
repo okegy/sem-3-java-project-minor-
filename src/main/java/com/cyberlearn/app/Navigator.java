@@ -4,6 +4,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.application.Platform;
+import javafx.scene.control.Alert;
 
 public class Navigator {
     private static Stage stage;
@@ -26,6 +28,14 @@ public class Navigator {
         } catch (Exception e) {
             System.err.println("Error loading FXML: " + fxml);
             e.printStackTrace();
+            // Surface error to UI so users aren't stuck on Loading...
+            Platform.runLater(() -> {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Navigation Error");
+                alert.setHeaderText("Could not load screen: " + fxml);
+                alert.setContentText(e.getMessage());
+                alert.showAndWait();
+            });
         }
     }
 }

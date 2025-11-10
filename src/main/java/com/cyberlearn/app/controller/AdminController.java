@@ -21,6 +21,7 @@ public class AdminController {
     @FXML private TableView<User> tblUsers;
     @FXML private TableColumn<User, String> colUser;
     @FXML private TableColumn<User, String> colRole;
+    @FXML private TableColumn<User, String> colActive;
     @FXML private TableView<Progress> tblProgress;
     @FXML private TableColumn<Progress, String> colPUser;
     @FXML private TableColumn<Progress, Number> colQuiz;
@@ -36,6 +37,11 @@ public class AdminController {
     public void initialize(){
         colUser.setCellValueFactory(c -> new javafx.beans.property.SimpleStringProperty(c.getValue().getUsername()));
         colRole.setCellValueFactory(c -> new javafx.beans.property.SimpleStringProperty(c.getValue().getRole()));
+        if (colActive != null) {
+            colActive.setCellValueFactory(c -> new javafx.beans.property.SimpleStringProperty(
+                c.getValue().isActive() ? "Active" : "Inactive"
+            ));
+        }
         colPUser.setCellValueFactory(c -> new javafx.beans.property.SimpleStringProperty(c.getValue().getUsername()));
         colQuiz.setCellValueFactory(c -> new javafx.beans.property.SimpleIntegerProperty(c.getValue().getQuizScore()));
         colAttempts.setCellValueFactory(c -> new javafx.beans.property.SimpleIntegerProperty(c.getValue().getQuizAttempts()));

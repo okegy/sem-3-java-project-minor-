@@ -1,25 +1,20 @@
-# Maven build directory
-target/
-
-# IDE files
-.idea/
-*.iml
-.vscode/
-.settings/
-.project
-.classpath
-
-# Compiled class files
-*.class
-
-# Package files
-*.jar
-*.war
-*.ear
+﻿# Maven
+ target/
+ !.mvn/wrapper/maven-wrapper.jar
 
 # Logs
-*.log
+ *.log
+ logs/
 
-# OS specific files
-.DS_Store
-Thumbs.db
+# IDEs
+ .idea/
+ *.iml
+ .project
+ .classpath
+ .settings/
+ .vscode/
+ out/
+
+# OS
+ .DS_Store
+ Thumbs.db

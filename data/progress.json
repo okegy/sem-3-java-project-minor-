@@ -9,15 +9,24 @@
   "completedLessons" : [ ]
 }, {
   "username" : "akash",
-  "quizScore" : 19,
-  "quizAttempts" : 11,
+  "quizScore" : 1,
+  "quizAttempts" : 33,
   "encUses" : 11,
   "scanUses" : 1,
   "hashUses" : 3,
-  "passMgrUses" : 3,
+  "passMgrUses" : 5,
   "completedLessons" : [ "W2", "W3", "W1" ]
 }, {
   "username" : "admin",
+  "quizScore" : 0,
+  "quizAttempts" : 0,
+  "encUses" : 0,
+  "scanUses" : 0,
+  "hashUses" : 0,
+  "passMgrUses" : 0,
+  "completedLessons" : [ ]
+}, {
+  "username" : "java",
   "quizScore" : 0,
   "quizAttempts" : 0,
   "encUses" : 0,

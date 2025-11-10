@@ -20,17 +20,24 @@ public class AuthService {
         return java.util.HexFormat.of().formatHex(out);
     }
     private static final ObjectMapper MAPPER = new ObjectMapper();
-    private static Path USERS = Path.of("data/users.json");
+    private static Path USERS = Path.of(System.getProperty("user.home"), ".cyberlearn", "users.json");
     private static User current;
 
     public static User getCurrent(){ return current; }
 
     public static void ensureAdmin() throws Exception {
         if (!Files.exists(USERS)) {
+            // Create parent directories if they don't exist
             Files.createDirectories(USERS.getParent());
+            
+            // Create initial admin user
             List<User> init = new ArrayList<>();
             init.add(new User("admin", hash("admin123"), "ADMIN", true));
+            
+            // Write to file
             MAPPER.writerWithDefaultPrettyPrinter().writeValue(USERS.toFile(), init);
+            
+            System.out.println("Created admin user at: " + USERS.toAbsolutePath());
         }
     }
 
@@ -42,19 +49,46 @@ public class AuthService {
         return true;
     }
 
-    public static boolean login(String username, String password) throws Exception {
-        List<User> users = read();
-        Optional<User> u = users.stream().filter(x -> x.getUsername().equalsIgnoreCase(username)).findFirst();
-        if (u.isPresent() && u.get().getPasswordHash().equals(hash(password)) && u.get().isActive()) {
-            current = u.get();
-            return true;
+    public static boolean login(String username, String password) {
+        try {
+            List<User> users = read();
+            Optional<User> u = users.stream()
+                .filter(x -> x.getUsername().equalsIgnoreCase(username))
+                .findFirst();
+                
+            if (u.isPresent() && u.get().getPasswordHash().equals(hash(password)) && u.get().isActive()) {
+                current = u.get();
+                return true;
+            }
+            return false;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
         }
-        return false;
     }
 
     public static List<User> read() throws Exception {
         ensureAdmin();
-        return MAPPER.readValue(USERS.toFile(), new TypeReference<List<User>>(){});
+        List<User> users = MAPPER.readValue(USERS.toFile(), new TypeReference<List<User>>(){});
+
+        // Merge any usernames that exist in progress data but are missing from users.json
+        try {
+            java.util.List<com.cyberlearn.app.model.Progress> progressList = com.cyberlearn.app.util.ProgressService.all();
+            boolean changed = false;
+            for (com.cyberlearn.app.model.Progress p : progressList) {
+                boolean exists = users.stream().anyMatch(u -> u.getUsername().equalsIgnoreCase(p.getUsername()));
+                if (!exists) {
+                    // Add as active STUDENT with a temporary password; admin can reset it
+                    users.add(new User(p.getUsername(), hash("changeme123"), "STUDENT", true));
+                    changed = true;
+                }
+            }
+            if (changed) {
+                MAPPER.writerWithDefaultPrettyPrinter().writeValue(USERS.toFile(), users);
+            }
+        } catch (Exception ignored) {}
+
+        return users;
     }
 
     public static String hash_old(String text) throws Exception {

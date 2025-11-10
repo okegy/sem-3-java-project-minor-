@@ -4,25 +4,46 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.web.*?>
 
-<VBox xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cyberlearn.app.controller.CoursesController" spacing="12" styleClass="content">
-    <Label text="Learning Courses" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+<VBox xmlns="http://javafx.com/javafx/8"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.cyberlearn.app.controller.CoursesController"
+      spacing="10" style="-fx-padding: 20;">
     
-    <HBox spacing="12">
-        <VBox spacing="8" prefWidth="260">
-            <Label text="Course Modules:"/>
+    <Label text="Cybersecurity Learning Courses" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+    
+    <HBox spacing="10" VBox.vgrow="ALWAYS">
+        <!-- Course List -->
+        <VBox spacing="10" HBox.hgrow="ALWAYS">
+            <Label text="Available Courses:" style="-fx-font-weight: bold;"/>
             <ListView fx:id="list" VBox.vgrow="ALWAYS"/>
+            <HBox spacing="10">
+                <Button text="Mark Complete" onAction="#onComplete" style="-fx-background-color: #00ff88; -fx-text-fill: black;"/>
+                <Button text="Take Quiz" onAction="#onTestButton" style="-fx-background-color: #3498db; -fx-text-fill: white;"/>
+            </HBox>
         </VBox>
-        <VBox spacing="8" HBox.hgrow="ALWAYS">
-            <Label text="Course Notes:"/>
-            <TextArea fx:id="notes" wrapText="true" VBox.vgrow="ALWAYS" editable="false"/>
+        
+        <!-- Course Content -->
+        <VBox spacing="10" HBox.hgrow="ALWAYS">
+            <Label text="Course Content:" style="-fx-font-weight: bold;"/>
+            <TextArea fx:id="notes" VBox.vgrow="ALWAYS" editable="false"/>
+        </VBox>
+        
+        <!-- Web View -->
+        <VBox spacing="10" HBox.hgrow="ALWAYS">
+            <Label text="Video/Content:" style="-fx-font-weight: bold;"/>
+            <WebView fx:id="web" VBox.vgrow="ALWAYS"/>
         </VBox>
     </HBox>
     
-    <Label text="Lesson Video:"/>
-    <WebView fx:id="web" prefHeight="360"/>
+    <!-- Password Generator Section -->
+    <VBox spacing="10" style="-fx-background-color: rgba(0, 255, 136, 0.1); -fx-padding: 16; -fx-background-radius: 8;">
+        <Label text="Password Generator Tool" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+        <HBox spacing="10">
+            <TextField fx:id="websiteField" promptText="Website" HBox.hgrow="ALWAYS"/>
+            <TextField fx:id="usernameField" promptText="Username" HBox.hgrow="ALWAYS"/>
+            <PasswordField fx:id="passwordField" promptText="Generated Password" HBox.hgrow="ALWAYS"/>
+            <Button fx:id="generatePasswordBtn" text="Generate" onAction="#onGeneratePassword" style="-fx-background-color: #00ff88; -fx-text-fill: black;"/>
+        </HBox>
+    </VBox>
     
-    <HBox spacing="12">
-        <Button text="Take Week Quiz (10 Questions)" onAction="#onTakeQuiz" style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-weight: bold; -fx-pref-width: 240;"/>
-        <Button text="Mark Lesson Complete and Get Certificate" onAction="#onComplete" style="-fx-background-color: #00ff88; -fx-text-fill: black; -fx-font-weight: bold; -fx-pref-width: 320;"/>
-    </HBox>
 </VBox>
